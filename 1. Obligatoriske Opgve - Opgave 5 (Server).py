@@ -67,7 +67,7 @@ def handleClient(connectionSocket, addr):
  
 
 def handleClose(connectionSocket, addr):
- connectionSocket.send(' Connection ended'.encode())
+ connectionSocket.send('Connection ended'.encode())
  connectionSocket.close()
  print('Connection closed for client: ', addr)
 
