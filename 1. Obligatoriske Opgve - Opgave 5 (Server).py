@@ -27,39 +27,19 @@ def handleClient(connectionSocket, addr):
   txtCalc = f' '
   
   if dictJson['calc'] == 'add':
-   calc = int(dictJson['num1']) + int(dictJson['num2'])
-
-   method = 'addition'
-   calcFunc = '+'
-   
-   txtCalc = f'The {method} of {dictJson["num1"]} {calcFunc} {dictJson["num2"]} = {calc}'
+   txtCalc = f'The addition of {dictJson["num1"]} + {dictJson["num2"]} = {int(dictJson["num1"]) + int(dictJson["num2"])}'
    print(txtCalc)
   
   elif dictJson['calc'] == 'subtract':
-   calc = int(dictJson['num1']) - int(dictJson['num2'])
-   
-   method = 'subtraction'
-   calcFunc = '-'
-   
-   txtCalc = f'The {method} of {dictJson["num1"]} {calcFunc} {dictJson["num2"]} = {calc}'
+   txtCalc = f'The subtraction of {dictJson["num1"]} - {dictJson["num2"]} = {int(dictJson["num1"]) - int(dictJson["num2"])}'
    print(txtCalc)
   
   elif dictJson['calc'] == 'multiply':
-   calc = int(dictJson['num1']) * int(dictJson['num2'])
-   
-   method = 'multiplication'
-   calcFunc = '*'
-   
-   txtCalc = f'The {method} of {dictJson["num1"]} {calcFunc} {dictJson["num2"]} = {calc}'
+   txtCalc = f'The multiplication of {dictJson["num1"]} * {dictJson["num2"]} = {int(dictJson["num1"]) * int(dictJson["num2"])}'
    print(txtCalc)
   
   elif dictJson['calc'] == 'divide':
-   calc = int(dictJson['num1']) * int(dictJson['num2'])
-   
-   method = 'divition'
-   calcFunc = '/'
-   
-   txtCalc = f'The {method} of {dictJson["num1"]} {calcFunc} {dictJson["num2"]} = {calc}'
+   txtCalc = f'The divition of {dictJson["num1"]} / {dictJson["num2"]} = {int(dictJson["num1"]) / int(dictJson["num2"])}'
    print(txtCalc)
   
   connectionSocket.send(txtCalc.encode())
